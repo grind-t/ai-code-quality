@@ -1,5 +1,5 @@
 ---
-name: code-quality-principles
+name: principles
 description: Code quality principles. Use whenever writing or changing code.
 ---
 

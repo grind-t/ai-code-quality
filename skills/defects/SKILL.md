@@ -1,5 +1,5 @@
 ---
-name: code-quality-defects
+name: defects
 description: Code quality defects.
 disable-model-invocation: true
 ---
