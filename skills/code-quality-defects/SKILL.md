@@ -1,6 +1,12 @@
-# Debt schema
+---
+name: code-quality-defects
+description: Code quality defects.
+disable-model-invocation: true
+---
 
-Each debt item is described by these fields:
+# Code quality defects
+
+Describe each defect by these fields:
 
 - `defect_description`: a short statement of the problem.
 - `defect_location`: where the defect lives in the project.

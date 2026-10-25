@@ -39,7 +39,7 @@ codex plugin marketplace add grind-t/ai-code-quality
 Затем установите `code-quality` из каталога плагинов (`/plugins` в Codex).
 Локально: `codex plugin marketplace add ./ai-code-quality`.
 
-Навыки доступны с префиксом плагина: `/code-quality:<skill-name>`, например `/code-quality:design-principles`.
+Навыки доступны с префиксом плагина: `/code-quality:<skill-name>`, например `/code-quality:code-quality-principles`.
 
 ## Добавление навыка
 
@@ -61,6 +61,5 @@ description: Что делает навык и когда его использ�
 
 | Навык | Описание |
 |---|---|
-| `design-principles` | Принципы дизайна кода |
-| `naming-principles` | Принципы именования |
-| `techdebt-principles` | Описание техдолга по схеме на основе ISO/IEC 25010:2023 (вызывается вручную) |
+| `code-quality-principles` | Принципы дизайна кода и именования |
+| `code-quality-defects` | Описание дефектов качества кода по схеме на основе ISO/IEC 25010:2023 (вызывается вручную) |
