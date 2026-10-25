@@ -1,6 +1,6 @@
 ---
 name: principles
-description: Code quality principles. Use whenever writing or changing code.
+description: Code quality principles. Use whenever writing, changing or reviewing code.
 ---
 
 # Code quality principles
