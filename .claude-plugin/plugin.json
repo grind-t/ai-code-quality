@@ -1,0 +1,8 @@
+{
+  "name": "code-quality",
+  "version": "0.1.0",
+  "description": "Принципы качества кода (skills) для Claude Code и Codex",
+  "author": { "name": "grind-t", "email": "grindt.gd@gmail.com" },
+  "license": "MIT",
+  "keywords": ["skills", "code-quality"]
+}

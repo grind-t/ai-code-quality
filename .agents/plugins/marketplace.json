@@ -1,0 +1,12 @@
+{
+  "name": "code-quality",
+  "interface": { "displayName": "AI Code Quality" },
+  "plugins": [
+    {
+      "name": "code-quality",
+      "source": { "source": "local", "path": "./" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}
