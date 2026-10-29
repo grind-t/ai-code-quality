@@ -26,7 +26,7 @@ Describe each defect by these fields:
   - `consequence`: the end effect per FMEA (IEC 60812:2018), with the defect
     as the failure cause, taken at the level of the product's users and
     owners. If the defect breaks nothing at run time, trace it through how
-    fast and how reliably an AI agent or developer can work with the system.
+    fast and how reliably maintainers can work with the system.
   - `likelihood`: the ISO 31000:2018 likelihood of `consequence`: High,
     Medium or Low.
   - `severity`: the IEEE 1044-2009 Severity of `consequence`: Blocking,
@@ -42,12 +42,12 @@ defect_characteristic: Maintainability
 defect_subcharacteristic: Modifiability
 defect_risks:
   most_likely:
-    event: An AI agent or developer changes how totals are computed
+    event: A maintainer changes how totals are computed
     consequence: Each change takes three edits and three reviews, so changes to totals ship slower
     likelihood: High
     severity: Minor
   worst_credible:
-    event: An AI agent or developer changes totals and misses one of the three copies, and no test compares totals across them
+    event: A maintainer changes totals and misses one of the three copies, and no test compares totals across them
     consequence: Customers are invoiced amounts that differ from their orders, and invoices have to be corrected and reissued
     likelihood: Medium
     severity: Critical
