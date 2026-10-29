@@ -15,15 +15,14 @@ Describe each defect by these fields:
 - `defect_characteristic`: the ISO/IEC 25010:2023 quality characteristic the
   defect impairs.
 - `defect_subcharacteristic`: the ISO/IEC 25010:2023 quality subcharacteristic
-  the defect impairs, within `defect_characteristic`.
-- `defect_risks`: the `most_likely` and the `worst_credible` risks that the
-  defect gives rise to as a risk source per ISO 31000:2018, as in the
-  consequence/likelihood analysis of IEC 31010:2019. Omit `worst_credible`
-  when it matches `most_likely`. Each risk has:
-  - `event`: a credible event that leads to `consequence`. An event is
-    credible when it can happen in the system, each of its steps follows from
-    the defect rather than from another independent mistake, and no existing
-    test, check or monitoring catches it before `consequence`.
+  the defect impairs.
+- `defect_risks`: the `most_likely` and the `worst_credible` risks of the
+  defect as a risk source per ISO 31000:2018, as in the consequence/likelihood
+  analysis of IEC 31010:2019. Omit `worst_credible` when it matches
+  `most_likely`. Each risk has:
+  - `event`: a credible event, where every step follows from the defect
+    rather than from another independent mistake, and no existing test,
+    check or monitoring catches it before `consequence`.
   - `consequence`: the end effect per FMEA (IEC 60812:2018), with the defect
     as the failure cause, taken at the level of the product's users and
     owners. If the defect breaks nothing at run time, trace it through how
@@ -49,7 +48,7 @@ defect_risks:
     severity: Minor
   worst_credible:
     event: An AI agent or developer changes totals and misses one of the three copies, and no test compares totals across them
-    consequence: Customers are invoiced amounts that differ from their orders
+    consequence: Customers are invoiced amounts that differ from their orders, and invoices have to be corrected and reissued
     likelihood: Medium
-    severity: Major
+    severity: Critical
 ```
