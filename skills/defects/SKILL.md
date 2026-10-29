@@ -16,13 +16,40 @@ Describe each defect by these fields:
   defect impairs.
 - `defect_subcharacteristic`: the ISO/IEC 25010:2023 quality subcharacteristic
   the defect impairs, within `defect_characteristic`.
+- `defect_risks`: the `most_likely` and the `worst_credible` risks that the
+  defect gives rise to as a risk source per ISO 31000:2018, as in the
+  consequence/likelihood analysis of IEC 31010:2019. Omit `worst_credible`
+  when it matches `most_likely`. Each risk has:
+  - `event`: a credible event that leads to `consequence`. An event is
+    credible when it can happen in the system, each of its steps follows from
+    the defect rather than from another independent mistake, and no existing
+    test, check or monitoring catches it before `consequence`.
+  - `consequence`: the end effect per FMEA (IEC 60812:2018), with the defect
+    as the failure cause, taken at the level of the product's users and
+    owners. If the defect breaks nothing at run time, trace it through how
+    fast and how reliably an AI agent or developer can work with the system.
+  - `likelihood`: the ISO 31000:2018 likelihood of `consequence`: High,
+    Medium or Low.
+  - `severity`: the IEEE 1044-2009 Severity of `consequence`: Blocking,
+    Critical, Major, Minor or Inconsequential.
 
 Example:
 
 ```yaml
-defect_description: Order totals are computed in three places with different rounding
+defect_description: Order totals are computed in three places
 defect_location: src/orders/totals.py, src/billing/invoice.py, src/reports/sales.py
 defect_type: Duplicated Code (Fowler, Refactoring, 2nd ed.)
 defect_characteristic: Maintainability
 defect_subcharacteristic: Modifiability
+defect_risks:
+  most_likely:
+    event: An AI agent or developer changes how totals are computed
+    consequence: Each change takes three edits and three reviews, so changes to totals ship slower
+    likelihood: High
+    severity: Minor
+  worst_credible:
+    event: An AI agent or developer changes totals and misses one of the three copies, and no test compares totals across them
+    consequence: Customers are invoiced amounts that differ from their orders
+    likelihood: Medium
+    severity: Major
 ```
